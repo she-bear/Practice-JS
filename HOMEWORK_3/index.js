@@ -6,7 +6,7 @@ let number = 2;
 console.log(getPow(number) + getPow(number + 1));
 
 // Task 2
-const inputSalary = +(prompt('Введите число:'));
+const inputSalary = +(prompt('Введите сумму заработной платы:'));
 
 if (inputSalary)
     sendWageMessage(inputSalary)
@@ -21,3 +21,25 @@ function sendWageMessage(userSalary) {
     console.log(`Размер заработной платы за вычетом налогов равен ${(Math.abs(userSalary) * 0.87).toFixed(2)}`);
 }
 
+// Task 3
+//Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию, которая определяет максимальное значение среди этих чисел
+
+const num1 = parseFloat(prompt("Первое число: "));
+const num2 = parseFloat(prompt("Второе число: "));
+const num3 = parseFloat(prompt("Третье число: "));
+
+const getLargest = (arg1, arg2, arg3) => {
+    if (arg1 >= arg2 && arg1 >= arg3) {
+        return arg1;
+    }
+    else if (arg2 >= arg1 && arg2 >= arg3) {
+        return arg2;
+    }
+    else {
+        return arg3;
+    }
+
+    // а вообще вот так: Math.max(arg1, arg2, arg3)
+}
+
+console.log(getLargest(num1, num2, num3));
