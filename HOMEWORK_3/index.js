@@ -43,3 +43,15 @@ const getLargest = (arg1, arg2, arg3) => {
 }
 
 console.log(getLargest(num1, num2, num3));
+
+// Task 4
+const getSum = (number1, number2) => number1 + number2;
+const getDiff = (number1, number2) => (number1 > number2) ? number1 - number2 : number2 - number1;
+const getMult = (number1, number2) => number1 * number2;
+const getDiv = (number1, number2) => number1 / number2;
+
+console.log(getSum(-80, 90));
+console.log(getDiff(100, 20));
+console.log(getDiff(30, 70));
+console.log(getMult(55, 2));
+console.log(getDiv(200, 4));
