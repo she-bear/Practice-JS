@@ -39,3 +39,28 @@ console.log(post.author);
 console.log(post.comments[0].rating.dislikes);
 console.log(post.comments[1].userId);
 console.log(post.comments[1].text);
+
+// task 3
+const products = [
+    {
+        id: 3,
+        price: 200,
+    },
+    {
+        id: 4,
+        price: 900,
+    },
+    {
+        id: 1,
+        price: 1000,
+    },
+];
+
+// я бы не стала изменять данные в исходном объекте, а создала клон
+// т.к. структура вложенная - используем deep cloning
+const discount = structuredClone(products);
+discount.forEach((item) => item.price = item.price * 0.85);
+
+// при выводе видно, что мы сохранили и исходные цены, и имеем цены с учетом скидки
+console.log(products);
+console.log(discount);
