@@ -64,3 +64,33 @@ discount.forEach((item) => item.price = item.price * 0.85);
 // при выводе видно, что мы сохранили и исходные цены, и имеем цены с учетом скидки
 console.log(products);
 console.log(discount);
+
+// task 4
+const goods = [
+    {
+        id: 3,
+        price: 127,
+        photos: [
+            "1.jpg",
+            "2.jpg",
+        ],
+    },
+    {
+        id: 5,
+        price: 499,
+        photos: [],
+    },
+    {
+        id: 10,
+        price: 26,
+        photos: [
+            "3.jpg",
+        ],
+    },
+    {
+        id: 8,
+        price: 78,
+    },
+];
+console.log(goods.filter(el => el.photos?.length > 0));
+console.log(goods.sort((a, b) => a.price - b.price));
