@@ -1,3 +1,4 @@
+'use strict'
 // Задание 1
 // Дан массив const arr = [1, 5, 7, 9] с помощью Math.min и spread оператора,
 // найти минимальное число в массиве, решение задание должно состоять из одной
@@ -25,7 +26,7 @@ function createCounter(initValue) {
 };
 
 
-initValueFirst = 4;
+const initValueFirst = 4;
 const counterFirst = createCounter(initValueFirst);
 console.log(`Init counterFirst. Value = ${counterFirst.value()}`);
 counterFirst.decrement();
@@ -33,7 +34,7 @@ console.log(`Decrement counterFirst. Value = ${counterFirst.value()}`);
 counterFirst.increment();
 console.log(`Increment counterFirst. Value = ${counterFirst.value()}`);
 
-initValueSecond = 0;
+const initValueSecond = 0;
 const counterSecond = createCounter(initValueSecond);
 console.log(`Init counterSecond. Value = ${counterSecond.value()}`);
 counterSecond.increment();
