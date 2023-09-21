@@ -18,8 +18,10 @@ person.changeName("Mike");
 person.introduce(); 
  */
 
-// const person = {   
+// const person = {
 //     gender: "male",
+//     person.name = "John",
+//     person.age = 25,
 //     introduce() {
 //         console.log(`My name is ${this.name}. I'm ${this.age} years old and I identify as ${this.gender}`);
 //     },
@@ -27,8 +29,7 @@ person.introduce();
 //         this.name = newPersonName;
 //     }
 // };
-// person.name = "John";
-// person.age = 25;
+// 
 // person.introduce(); 
 // person.changeName("Mike");
 // console.log(person);
@@ -78,10 +79,13 @@ dog.eat(); // "Rex eating."
 //     b: 10,
 // }
 
+// разница между call и apply только в том, как передаются аргументы
 // console.log(add.call(obj, 2, 3));
 // console.log(add.apply(obj, [2, 3]));
 // // Функция bind возвращает функцию в контексте obj
+// // В этом месте происходить как бы "подготовка" функции
 // const result = add.bind(obj);
+// // а здесь будет вызов, когда будут готовы "остальные" параметры
 // console.log(result(2, 3));
 
 /**
@@ -146,14 +150,18 @@ class BankAccount {
         this.balance -= amount;
     }
     printBalance() {
+        // к статическому свойству обращаемся НЕ через this
         console.log(`${BankAccount.bankName} account ${this.accountNumber} balance: ${this.balance}`);
     }
 }
 
 function validateMoney(amount) {
+    // Number.isFinite(amount) вернет true, если amount - "нормальное число" (не Infinity, не строка)
     if (!Number.isFinite(amount) || amount <= 0) {
         throw new Error('Wrong deposit amount, must be a positive number.');
     }
+    // проверка на то, что у входного числа НЕ БОЛЬШЕ двух знаков после точки
+    // (amount % 1).toString() вернет строку вида "0.5678", нужно проверить, что длина этой строки не больш 4 символов
     if ((amount % 1).toString().length > 4) {
         throw new Error('Wrong money format');
     }
