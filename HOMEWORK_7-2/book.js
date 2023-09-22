@@ -16,7 +16,7 @@ class Book {
     }
 
     set title(newTitle) {
-        if (typeof (newTitle) != 'string') {
+        if (typeof (newTitle) !== 'string') {
             throw new Error('Wrong title, must be a string.');
         }
         this._title = newTitle;
@@ -27,7 +27,7 @@ class Book {
     }
 
     set author(newAuthor) {
-        if (typeof (newAuthor) != 'string') {
+        if (typeof (newAuthor) !== 'string') {
             throw new Error('Wrong author, must be a string.');
         }
         this._author = newAuthor;
@@ -38,7 +38,7 @@ class Book {
     }
 
     set pages(newPages) {
-        if (!Number.isFinite(newPages) || !Number.isInteger(newPages) || newPages <= 0) {
+        if (!Number.isInteger(newPages) || newPages <= 0) {
             throw new Error("Wrong pages number, must be a positive number.")
         }
         this._pages = newPages;

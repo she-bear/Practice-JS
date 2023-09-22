@@ -27,7 +27,7 @@ class Student {
 
     // считаем, что студент д.б. хотя бы старше 18 лет + обычные проверки на число и целое
     set age(newAge) {
-        if (!Number.isFinite(newAge) || !Number.isInteger(newAge) || newAge < 18 || newAge > 100) {
+        if (!Number.isInteger(newAge) || newAge < 18 || newAge > 100) {
             throw new Error("Wrong student age, must be a positive number and more then 18.")
         }
         this._age = newAge;
