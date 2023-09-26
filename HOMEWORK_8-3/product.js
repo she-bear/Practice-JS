@@ -38,7 +38,7 @@ class Order {
     products = [];
 
     addProduct(product) {
-        if (Object.getPrototypeOf(product) != Product.prototype) {
+        if (Object.getPrototypeOf(product) !== Product.prototype) {
             throw new Error(`Oh, now! It isn't a product, it is a ${product.constructor.name}`)
         }
         this.products.push(product);
