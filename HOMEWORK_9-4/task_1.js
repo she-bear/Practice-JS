@@ -42,3 +42,16 @@ dataProcessing();
 // генерация ошибки (при этом, при запуске будет видно, что запросы не мешают друг другу)
 userID = 131;
 dataProcessing();
+
+// решение от преподавателя
+async function getUserDataT(id) {
+    const response = await fetch(`https://reqres.in/api/users/${id}`);
+    if (response.ok) {
+        return await response.json();
+    }
+    throw new Error(await response.text());
+}
+
+getUserDataT(3)
+    .then(result => console.log(result))
+    .catch(err => console.log(`Ошибка: ${err.message}`));
